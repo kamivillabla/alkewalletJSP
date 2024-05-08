@@ -37,6 +37,6 @@ Para ejecutar y desarrollar Alke Wallet se requiere lo siguiente:
 
 ## Uso
 
-Para comenzar a usar Alke Wallet, agregada datos de usuario en la base de datos luego, accede a la dirección web donde se ha desplegado la aplicación, y utiliza las credenciales proporcionadas o registradas para iniciar sesión.
+Para comenzar a usar Alke Wallet, accede a la dirección web donde se ha desplegado la aplicación y utiliza las credenciales proporcionadas o registradas para iniciar sesión.
 
 
