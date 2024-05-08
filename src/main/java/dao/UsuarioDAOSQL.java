@@ -77,7 +77,7 @@ public class UsuarioDAOSQL implements UsuarioDAO {
      */
     @Override
     public Cuenta obtenerCuentaPorUsuarioId(int usuarioId) {
-        String sql = "SELECT id, usuario_id, saldo, moneda, numeroCuentas FROM cuentas WHERE usuario_id = ?";
+        String sql = "SELECT id, usuario_id, saldo, moneda, numeroDeCuenta FROM cuentas WHERE usuario_id = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, usuarioId);
@@ -88,7 +88,7 @@ public class UsuarioDAOSQL implements UsuarioDAO {
                 cuenta.setUsuarioId(rs.getInt("usuario_id"));
                 cuenta.setSaldo(rs.getInt("saldo"));
                 cuenta.setMoneda(rs.getString("moneda"));
-                cuenta.setNumeroCuentas(rs.getLong("numeroCuentas"));  
+                cuenta.setNumeroCuenta(rs.getLong("numeroDeCuenta"));  
                 return cuenta;
             }
         } catch (SQLException e) {
