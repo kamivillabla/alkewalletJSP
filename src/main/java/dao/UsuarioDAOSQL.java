@@ -32,7 +32,7 @@ public class UsuarioDAOSQL implements UsuarioDAO {
 	            Usuario usuario = new Usuario();
 	            usuario.setId(rs.getInt("id"));
 	            usuario.setNombre(rs.getString("nombre"));
-	            usuario.setApellido(rs.getString("apellido")); // Set apellido
+	            usuario.setApellido(rs.getString("apellido")); 
 	            usuario.setEmail(rs.getString("email"));
 	            usuario.setContraseña(rs.getString("contraseña"));
 	            usuario.setRut(rs.getString("rut"));

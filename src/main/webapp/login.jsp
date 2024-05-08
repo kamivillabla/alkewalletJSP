@@ -53,12 +53,11 @@
 		crossorigin="anonymous"></script>
 	<script src="js/script.js"></script>
 	<script>
-    $(document).ready(function() {
-        <%if (request.getAttribute("errorMessage") != null) {%>
-            showAlert('<%=request.getAttribute("errorMessage")%>
-		', 'danger');
-	<%}%>
-		});
+	$(document).ready(function() {
+        <% if (request.getAttribute("errorMessage") != null) { %>
+            showAlert('<%= request.getAttribute("errorMessage") %>', 'danger');
+        <% } %>
+    });
 	</script>
 </body>
 </html>

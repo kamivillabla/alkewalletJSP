@@ -31,12 +31,12 @@ Para ejecutar y desarrollar Alke Wallet se requiere lo siguiente:
 
 1. **Clonar el repositorio**: Descarga o clona el repositorio en tu entorno local.
 2. **Configurar la base de datos**:
-   - Importa el script `alkewallet-kami.sql` a tu servidor MySQL para crear las tablas necesarias.
+   - Importa el script `alkewalletkami.sql` a tu servidor MySQL para crear las tablas necesarias.
    - Asegúrate de ajustar las credenciales de conexión a la base de datos en el archivo `DBConnection.java`.
 3. **Desplegar en el servidor**:
 
 ## Uso
 
-Para comenzar a usar Alke Wallet, simplemente accede a la dirección web donde se ha desplegado la aplicación, y utiliza las credenciales proporcionadas o registradas para iniciar sesión.
+Para comenzar a usar Alke Wallet, agregada datos de usuario en la base de datos luego, accede a la dirección web donde se ha desplegado la aplicación, y utiliza las credenciales proporcionadas o registradas para iniciar sesión.
 
 
