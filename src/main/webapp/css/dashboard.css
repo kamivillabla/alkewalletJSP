@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+/* card */
+.my-card {
+	width: 80%;
+	background-color: white;
+	border-radius: 10px;
+	padding: 20px;
+	max-height: 280px;
+	margin-top: 20px;
+	box-shadow: var(--box-shadow-primary);
+}
+
+.my-card__credit-card {
+	width: 350px;
+	height: 200px;
+	background-image: linear-gradient(145deg, #826ab4, #a58dd8);
+	border-radius: 20px;
+	color: white;
+	padding: 20px 30px;
+	box-shadow: var(--box-shadow-primary);
+	font-family: 'Arial', sans-serif;
+	position: relative;
+}
+
+.credit-card__logo {
+	position: absolute;
+	top: 20px;
+	right: 28px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.credit-card__balance {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+
+.credit-card__info {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	font-size: 16px;
+}
+
+.credit-card__holder {
+	margin-top: 26px;
+}
+
+.credit-card__holder span, .credit-card__expires span {
+	display: block;
+	font-size: 12px;
+	opacity: 0.7;
+}
+
+.my-card-depositAndRemoval {
+	width: 38%
+}
+.my-card-depositAndRemoval input {
+	padding: 12px 10px 12px 20px;
+    border: 1px solid var(--color-primary);
+    box-sizing: border-box;
+}
+
+.button {
+	width: 50%;
+	background: var(--color-primary);
+	padding: 10px;
+	color: white;
+	transition: transform 0.3s ease;
+	font-size: 18px;
+	margin: 0 auto;
+}
+
+.button:hover {
+	background: transparent;
+	border: 1px solid var(--color-primary);
+	transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+}
+
+@media ( max-width : 1024px) {
+	/* card */
+	.container-menu {
+		margin-top: 53px;
+	}
+	.my-card {
+		width: 100%;
+		max-height: none;
+		height: max-content;
+	}
+	.credit-card__balance {
+		font-size: 23px;
+	}
+	.credit-card__logo {
+		font-size: 20px;
+	}
+	.my-card__credit-card {
+		width: auto;
+		max-width: 350px;
+	}
+}

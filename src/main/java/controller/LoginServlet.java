@@ -13,10 +13,21 @@ import jakarta.servlet.http.HttpSession;
 import model.Usuario;
 import model.Cuenta;
 
+/**
+ * Servlet para manejar el proceso de inicio de sesión de usuario.
+ */
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 9195277462080564358L;
 
+    /**
+     * Maneja las solicitudes POST para el inicio de sesión de usuario.
+     * 
+     * @param request  El objeto HttpServletRequest que contiene la solicitud del cliente.
+     * @param response El objeto HttpServletResponse que contiene la respuesta que se enviará al cliente.
+     * @throws ServletException Si ocurre un error al manejar la solicitud.
+     * @throws IOException      Si ocurre un error de E/S al manejar la solicitud.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");

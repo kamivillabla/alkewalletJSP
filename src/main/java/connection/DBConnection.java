@@ -9,19 +9,37 @@ public class DBConnection {
     private static final String USER = "root";
     private static final String PASSWORD = "123456";
 
-    public static Connection getConnection() throws SQLException {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            System.out.println("MySQL JDBC driver not found.");
-            e.printStackTrace();
-        }
+    // La instancia única de Connection
+    private static Connection instance;
 
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+    // Constructor privado para prevenir instanciación
+    private DBConnection() {}
+
+    /**
+     * Devuelve la única instancia de Connection.
+     * @return la instancia de la conexión a la base de datos
+     * @throws SQLException si ocurre un error de SQL al obtener la conexión
+     */
+    public static Connection getConnection() throws SQLException {
+        if (instance == null || instance.isClosed()) {
+            synchronized (DBConnection.class) {
+                if (instance == null || instance.isClosed()) {
+                    try {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        instance = DriverManager.getConnection(URL, USER, PASSWORD);
+                    } catch (ClassNotFoundException e) {
+                        System.out.println("No se ha encontrado el controlador MySQL JDBC.");
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+        return instance;
     }
 
     public static void testConnection() {
-        try (Connection conn = getConnection()) {
+        try {
+            Connection conn = getConnection();
             if (conn != null) {
                 System.out.println("Conexión establecida con éxito.");
             } else {

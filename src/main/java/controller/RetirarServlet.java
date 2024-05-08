@@ -8,21 +8,36 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.Cuenta;
 import service.CuentaService;
-
 import java.io.IOException;
 import dao.UsuarioDAOSQL;
 
+/**
+ * Servlet para manejar el proceso de retiro de fondos de una cuenta.
+ */
 @WebServlet("/retirar")
 public class RetirarServlet extends HttpServlet {
     private static final long serialVersionUID = 3744107470811054392L;
 
+    /**
+     * Servicio para operaciones relacionadas con cuentas.
+     */
     private CuentaService cuentaService;
 
+    /**
+     * Inicializa el servlet.
+     */
     public void init() {
-  
         this.cuentaService = new CuentaService(new UsuarioDAOSQL());
     }
 
+    /**
+     * Maneja las solicitudes POST para retirar fondos de una cuenta.
+     * 
+     * @param request  El objeto HttpServletRequest que contiene la solicitud del cliente.
+     * @param response El objeto HttpServletResponse que contiene la respuesta que se enviará al cliente.
+     * @throws ServletException Si ocurre un error al manejar la solicitud.
+     * @throws IOException      Si ocurre un error de E/S al manejar la solicitud.
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Cuenta cuenta = (Cuenta) session.getAttribute("cuenta");
